@@ -130,11 +130,17 @@ class Items extends \XoopsObject
         $editorConfigs['width'] = '100%';
         $editorConfigs['height'] = '400px';
         $editorConfigs['editor'] = $editor;
-        $form->addElement(new \XoopsFormEditor(\_AM_WGBLOCKS_ITEM_TEXT, 'item_text', $editorConfigs));
+        $textItemText = new \XoopsFormEditor(\_AM_WGBLOCKS_ITEM_TEXT, 'item_text', $editorConfigs);
+        $textItemText->setDescription(\_AM_WGBLOCKS_ITEM_TEXT_DESC);
+        $form->addElement($textItemText);
         // Form Text itemFile
-        $form->addElement(new \XoopsFormText(\_AM_WGBLOCKS_ITEM_FILE, 'item_file', 50, 255, $this->getVar('item_file')));
+        $textItemFile = new \XoopsFormText(\_AM_WGBLOCKS_ITEM_FILE, 'item_file', 50, 255, $this->getVar('item_file'));
+        $textItemFile->setDescription(\_AM_WGBLOCKS_ITEM_FILE_DESC);
+        $form->addElement($textItemFile);
         // Form Text itemFunc
-        $form->addElement(new \XoopsFormText(\_AM_WGBLOCKS_ITEM_FUNC, 'item_func', 50, 255, $this->getVar('item_func')));
+        $textItemFunc = new \XoopsFormText(\_AM_WGBLOCKS_ITEM_FUNC, 'item_func', 50, 255, $this->getVar('item_func'));
+        $textItemFunc->setDescription(\_AM_WGBLOCKS_ITEM_FUNC_DESC);
+        $form->addElement($textItemFunc);
         // Form Text itemWeight
         $itemWeight = $this->isNew() ? '0' : $this->getVar('item_weight');
         $form->addElement(new \XoopsFormText(\_AM_WGBLOCKS_ITEM_WEIGHT, 'item_weight', 20, 150, $itemWeight));
