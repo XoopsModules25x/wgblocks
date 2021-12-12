@@ -1,0 +1,44 @@
+-
+    item_id: '1'
+    item_name: 'Example Plain Text'
+    item_type: '1'
+    item_text: "<h3>Header line Plain Text</h3>\r\n<p>This is first line of my plain text block</p>\r\n<p>Have fun</p>"
+    item_file: ''
+    item_func: ''
+    item_weight: '0'
+    item_status: '2'
+    item_datecreated: '1639230600'
+    item_submitter: '1'
+-
+    item_id: '2'
+    item_name: 'Example PHP function'
+    item_type: '2'
+    item_text: ''
+    item_file: example.php
+    item_func: wgblocks_func_example
+    item_weight: '0'
+    item_status: '2'
+    item_datecreated: '1639230600'
+    item_submitter: '1'
+-
+    item_id: '3'
+    item_name: 'Example Html file'
+    item_type: '3'
+    item_text: ''
+    item_file: example.html
+    item_func: ''
+    item_weight: '0'
+    item_status: '2'
+    item_datecreated: '1639230600'
+    item_submitter: '1'
+-
+    item_id: '4'
+    item_name: SysInfo
+    item_type: '2'
+    item_text: ''
+    item_file: sysinfo.php
+    item_func: wgblocks_func_sysinfo
+    item_weight: '0'
+    item_status: '2'
+    item_datecreated: '1639236600'
+    item_submitter: '1'
