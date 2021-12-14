@@ -23,6 +23,12 @@
  * @license        GPL 2.0 or later
  */
 
+use XoopsModules\Wgblocks\Common\ {
+    Configurator,
+    Migrate,
+    MigrateHelper
+};
+
 /**
  * @param      $module
  * @param null $prev_version
@@ -31,16 +37,38 @@
  */
 function xoops_module_update_wgblocks($module, $prev_version = null)
 {
-    $ret = null;
-    if ($prev_version < 10) {
-        $ret = update_wgblocks_v10($module);
-    }
-
-    $ret = wgblocks_check_db($module);
+    $moduleDirName = $module->dirname();
 
     //check upload directory
 	require_once __DIR__ . '/install.php';
     $ret = xoops_module_install_wgblocks($module);
+
+    // update DB corresponding to sql/mysql.sql
+    $configurator = new Configurator();
+    $migrate = new Migrate($configurator);
+
+    $fileSql = \XOOPS_ROOT_PATH . '/modules/' . $moduleDirName . '/sql/mysql.sql';
+    // ToDo: add function setDefinitionFile to .\class\libraries\vendor\xoops\xmf\src\Database\Migrate.php
+    // Todo: once we are using setDefinitionFile this part has to be adapted
+    //$fileYaml = \XOOPS_ROOT_PATH . '/modules/' . $moduleDirName . '/sql/update_' . $moduleDirName . '_migrate.yml';
+    //try {
+    //$migrate->setDefinitionFile('update_' . $moduleDirName);
+    //} catch (\Exception $e) {
+    // as long as this is not done default file has to be created
+    $moduleVersion = $module->getInfo('version');
+    $fileYaml = \XOOPS_ROOT_PATH . '/modules/' . $moduleDirName . "/sql/{$moduleDirName}_{$moduleVersion}_migrate.yml";
+    //}
+
+    // create a schema file based on sql/mysql.sql
+    $migratehelper = new MigrateHelper($fileSql, $fileYaml);
+    if (!$migratehelper->createSchemaFromSqlfile()) {
+        \xoops_error('Error: creation schema file failed!');
+        return false;
+    };
+
+    // run standard procedure for db migration
+    $migrate->getTargetDefinitions();
+    $migrate->synchronizeSchema();
 
     $errors = $module->getErrors();
     if (!empty($errors)) {
