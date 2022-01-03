@@ -54,6 +54,7 @@ function b_wgblocks_items_show($options)
     if (\count($options) > 0 && (int)$options[0] > 0) {
         $crItems->add(new \Criteria('item_id', '(' . \implode(',', $options) . ')', 'IN'));
     }
+    $crItems->add(new \Criteria('item_status', Constants::STATUS_ONLINE));
     $crItems->setSort('item_weight ASC, item_id');
     $crItems->setOrder('DESC');
     $itemsAll = $itemsHandler->getAll($crItems);
