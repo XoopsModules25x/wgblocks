@@ -7,7 +7,7 @@
     <!-- -----Help Content ---------- -->
     <h4 class="odd">Description</h4>
     <p class="even">
-        The wgBlocks module can be used to modules in XOOPS<br><br>
+        The wgBlocks module can be used to put content out of a modules in XOOPS as a block.<br><br>
     </p>
     <h4 class="odd">Install/uninstall</h4>
     <p class="even">
@@ -23,8 +23,11 @@ Detailed instructions on installing modules are available in the <a href="http:/
     <p class="even"><img src="<{$xoops_url}>/modules/wgblocks/language/english/help/overview.png"></p>
     <p class="odd">Activate a block with your item(s).</p>
     <p class="odd"><img src="<{$xoops_url}>/modules/wgblocks/language/english/help/blocks.png"></p>
-    <p class="odd">Your items will be displayed on user side.</p>
-    <p class="odd"><img src="<{$xoops_url}>/modules/wgblocks/language/english/help/index.png"></p>
+    <p class="even">Your items will be displayed on user side.</p>
+    <p class="even"><img src="<{$xoops_url}>/modules/wgblocks/language/english/help/index.png"></p>
+    
+    <p class="odd">&nbsp;</p>
+    <p class="odd">If you want to used multiple php functions then please split them (each function = 1 file)</p>
 
     <!-- -----Help Content ---------- -->
 </div>
