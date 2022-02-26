@@ -4,3 +4,5 @@
  - Original release wgblocks (Goffy - Wedega.com)
  - added new update (goffy)
  - replaced Common/XoopsConfirm by Common/Confirm(mamba/goffy)
+ - increased field size (goffy)
+ 
