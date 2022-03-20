@@ -5,4 +5,5 @@
  - added new update (goffy)
  - replaced Common/XoopsConfirm by Common/Confirm(mamba/goffy)
  - increased field size (goffy)
+ - usage of multiple functions in one php file (alain/goffy)
  

@@ -67,7 +67,7 @@ function b_wgblocks_items_show($options)
                     $file = \WGBLOCKS_UPLOAD_FUNC_PATH . '/' .$itemsAll[$i]->getVar('item_file');
                     $func = $itemsAll[$i]->getVar('item_func');
                     if (\file_exists($file)) {
-                        include $file;
+                        include_once $file;
                         if (\function_exists($func)){
                             $content = call_user_func($func);
                         } else {
