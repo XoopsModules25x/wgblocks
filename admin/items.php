@@ -67,7 +67,7 @@ switch ($op) {
                         $func = $itemsAll[$i]->getVar('item_func');
                         if (\file_exists($file)) {
                             $item['file_check'] = 'ok.png';
-                            include $file;
+                            include_once $file;
                             if (\function_exists($func)){
                                 $item['func_check'] = 'ok.png';
                             } else {
