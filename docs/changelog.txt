@@ -7,4 +7,5 @@
  - increased field size (goffy)
  - usage of multiple functions in one php file (alain/goffy)
  - adapted update due to new semantic versioning (goffy)
+ - fixed bug in MigrateHelper (goffy)
  
