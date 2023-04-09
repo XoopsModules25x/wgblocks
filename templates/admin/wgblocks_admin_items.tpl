@@ -19,7 +19,7 @@
                 <th class="center width5"><{$smarty.const._AM_WGBLOCKS_FORM_ACTION}></th>
             </tr>
         </thead>
-        <{if isset($items_count)}>
+        <{if isset($items_count) && $items_count > 0}>
         <tbody>
             <{foreach item=item from=$items_list}>
             <tr class='<{cycle values='odd, even'}>'>
@@ -29,17 +29,17 @@
                 <td class='center'><{$item.text_short}></td>
                 <td class='center'>
                     <{if isset($item.file_check) && $item.file_check != ''}>
-                        <img src="<{$wgblocks_icons_url_16}>/<{$item.file_check}>">
+                        <img src="<{$wgblocks_icons_url_16}>/<{$item.file_check}>" alt="filecheck">
                     <{/if}>
                     <{$item.file|default:''}>
                 </td>
                 <td class='center'>
-                    <{if isset($item.func_check) && $item.func_check != ''}><img src="<{$wgblocks_icons_url_16}>/<{$item.func_check}>"><{/if}>
+                    <{if isset($item.func_check) && $item.func_check != ''}><img src="<{$wgblocks_icons_url_16}>/<{$item.func_check}>" alt="functioncheck"><{/if}>
                     <{$item.func|default:''}>
                 </td>
                 <td class='center'><{$item.weight}></td>
                 <td class='center'>
-                    <img src="<{$wgblocks_icons_url_16}>/status<{$item.status}>.png">
+                    <img src="<{$wgblocks_icons_url_16}>/status<{$item.status}>.png" alt="status">
                 </td>
                 <td class='center'><{$item.datecreated}></td>
                 <td class='center'><{$item.submitter}></td>
