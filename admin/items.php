@@ -59,7 +59,6 @@ switch ($op) {
         // Table view items
         if ($itemsCount > 0) {
             foreach (\array_keys($itemsAll) as $i) {
-                $item = [];
                 $item = $itemsAll[$i]->getValuesItems();
                 switch ((int)$itemsAll[$i]->getVar('item_type')) {
                     case Constants::TYPE_PHP:
