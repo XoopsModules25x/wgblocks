@@ -1,7 +1,7 @@
 <!-- Header -->
 <{include file='db:wgblocks_admin_header.tpl' }>
 
-<{if $items_list|default:''}>
+<{if isset($items_list)}>
     <table class='table table-bordered'>
         <thead>
             <tr class='head'>
@@ -19,7 +19,7 @@
                 <th class="center width5"><{$smarty.const._AM_WGBLOCKS_FORM_ACTION}></th>
             </tr>
         </thead>
-        <{if $items_count|default:''}>
+        <{if isset($items_count)}>
         <tbody>
             <{foreach item=item from=$items_list}>
             <tr class='<{cycle values='odd, even'}>'>
@@ -28,13 +28,13 @@
                 <td class='center'><{$item.name}></td>
                 <td class='center'><{$item.text_short}></td>
                 <td class='center'>
-                    <{if $item.file_check}>
+                    <{if isset($item.file_check)}>
                         <img src="<{$wgblocks_icons_url_16}>/<{$item.file_check}>">
                     <{/if}>
                     <{$item.file}>
                 </td>
                 <td class='center'>
-                    <{if $item.func_check}><img src="<{$wgblocks_icons_url_16}>/<{$item.func_check}>"><{/if}>
+                    <{if isset($item.func_check)}><img src="<{$wgblocks_icons_url_16}>/<{$item.func_check}>"><{/if}>
                     <{$item.func}>
                 </td>
                 <td class='center'><{$item.weight}></td>
@@ -55,15 +55,15 @@
         <{/if}>
     </table>
     <div class="clear">&nbsp;</div>
-    <{if $pagenav|default:''}>
+    <{if isset($pagenav)}>
         <div class="xo-pagenav floatright"><{$pagenav|default:false}></div>
         <div class="clear spacer"></div>
     <{/if}>
 <{/if}>
-<{if $form|default:''}>
+<{if isset($form)}>
     <{$form|default:false}>
 <{/if}>
-<{if $error|default:''}>
+<{if isset($error)}>
     <div class="errorMsg"><strong><{$error|default:false}></strong></div>
 <{/if}>
 
