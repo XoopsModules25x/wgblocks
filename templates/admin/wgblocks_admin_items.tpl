@@ -28,14 +28,14 @@
                 <td class='center'><{$item.name}></td>
                 <td class='center'><{$item.text_short}></td>
                 <td class='center'>
-                    <{if isset($item.file_check)}>
+                    <{if isset($item.file_check) && $item.file_check != ''}>
                         <img src="<{$wgblocks_icons_url_16}>/<{$item.file_check}>">
                     <{/if}>
-                    <{$item.file}>
+                    <{$item.file|default:''}>
                 </td>
                 <td class='center'>
-                    <{if isset($item.func_check)}><img src="<{$wgblocks_icons_url_16}>/<{$item.func_check}>"><{/if}>
-                    <{$item.func}>
+                    <{if isset($item.func_check) && $item.func_check != ''}><img src="<{$wgblocks_icons_url_16}>/<{$item.func_check}>"><{/if}>
+                    <{$item.func|default:''}>
                 </td>
                 <td class='center'><{$item.weight}></td>
                 <td class='center'>
