@@ -21,13 +21,13 @@ If you like the wgBlocks module and thanks to the long process for giving the op
 # Require:
 - XOOPS 2.5.11;
 - XOOPS Admin 1.2;
-- PHP 7.4 or higher;
+- PHP 7.4 or higher; this module is ready for PHP 8.4
 - MySQL 5.5; -> Minimum Recommended Using InnoDB Version 5.1 or Later
 
 
 # Info
 
-**wgBlocks is ready for PHP 8.0**
+**wgBlocks is ready for PHP 8.4**
 
 #### Tutorial:
 No additional tutorial necessary. See module help.
