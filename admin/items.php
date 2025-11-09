@@ -18,8 +18,6 @@ declare(strict_types=1);
  * @copyright    2021 XOOPS Project (https://xoops.org)
  * @license      GPL 2.0 or later
  * @package      wgblocks
- * @since        1.0
- * @min_xoops    2.5.11 Beta1
  * @author       Goffy - Wedega.com - Email:webmaster@wedega.com - Website:https://xoops.wedega.com
  */
 
@@ -158,7 +156,7 @@ switch ($op) {
         $itemsObj->setVar('item_status', Request::getInt('item_status'));
         $itemDatecreatedArr = Request::getArray('item_datecreated');
         $itemDatecreatedObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $itemDatecreatedArr['date']);
-        $itemDatecreatedObj->setTime(0, 0, 0);
+        $itemDatecreatedObj->setTime(0, 0);
         $itemDatecreated = $itemDatecreatedObj->getTimestamp() + (int)$itemDatecreatedArr['time'];
         $itemsObj->setVar('item_datecreated', $itemDatecreated);
         $itemsObj->setVar('item_submitter', Request::getInt('item_submitter'));

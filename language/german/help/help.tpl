@@ -20,11 +20,11 @@ Detailed instructions on installing modules are available in the <a href="http:/
             </p>
     <h4 class="odd">Tutorial</h4>
     <p class="even">Add your information as new item.</p>
-    <p class="even"><img src="<{$xoops_url}>/modules/wgblocks/language/english/help/overview.png"></p>
+    <p class="even"><img src="<{$xoops_url}>/modules/wgblocks/language/english/help/overview.png" alt="overview"></p>
     <p class="odd">Activate a block with your item(s).</p>
-    <p class="odd"><img src="<{$xoops_url}>/modules/wgblocks/language/english/help/blocks.png"></p>
+    <p class="odd"><img src="<{$xoops_url}>/modules/wgblocks/language/english/help/blocks.png" alt="blocks"></p>
     <p class="odd">Your items will be displayed on user side.</p>
-    <p class="odd"><img src="<{$xoops_url}>/modules/wgblocks/language/english/help/index.png"></p>
+    <p class="odd"><img src="<{$xoops_url}>/modules/wgblocks/language/english/help/index.png" alt="index"></p>
 
     <!-- -----Help Content ---------- -->
 </div>

@@ -12,14 +12,13 @@ use XoopsModules\Wgblocks;
 
 /**
  * Prepares system prior to attempting to uninstall module
- * @param \XoopsModule $module {@link XoopsModule}
  *
  * @return bool true if ready to uninstall, false if not
  */
-function xoops_module_pre_uninstall_wgblocks(\XoopsModule $module)
+function xoops_module_pre_uninstall_wgblocks()
 {
     // Do some synchronization
-    echo 'ok';
+    //echo 'ok';
     return true;
 }
 
@@ -35,8 +34,6 @@ function xoops_module_uninstall_wgblocks(\XoopsModule $module)
     $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 
     $helper = Wgblocks\Helper::getInstance();
-
-    $utility = new Wgblocks\Utility();
 
     $success = true;
     $helper->loadLanguage('admin');

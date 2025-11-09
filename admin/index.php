@@ -18,8 +18,6 @@ declare(strict_types=1);
  * @copyright    2021 XOOPS Project (https://xoops.org)
  * @license      GPL 2.0 or later
  * @package      wgblocks
- * @since        1.0
- * @min_xoops    2.5.11 Beta1
  * @author       Goffy - Wedega.com - Email:webmaster@wedega.com - Website:https://xoops.wedega.com
  */
 
@@ -40,6 +38,7 @@ $adminObject->addInfoBox(\_AM_WGBLOCKS_STATISTICS);
 $adminObject->addInfoBoxLine(\sprintf( '<label>' . \_AM_WGBLOCKS_THEREARE_ITEMS . '</label>', $countItems));
 
 // Upload Folders
+$folder = [];
 $configurator = new Common\Configurator();
 if ($configurator->uploadFolders && \is_array($configurator->uploadFolders)) {
     foreach (\array_keys($configurator->uploadFolders) as $i) {

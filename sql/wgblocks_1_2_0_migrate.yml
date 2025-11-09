@@ -1,0 +1,37 @@
+wgblocks_items:
+    options: 'ENGINE=InnoDB'
+    columns: 
+        -
+            name: item_id
+            attributes: ' INT(8) UNSIGNED NOT NULL AUTO_INCREMENT '
+        -
+            name: item_name
+            attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
+        -
+            name: item_type
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: item_text
+            attributes: ' LONGTEXT NOT NULL  '
+        -
+            name: item_file
+            attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
+        -
+            name: item_func
+            attributes: ' VARCHAR(255) NOT NULL DEFAULT '''''''' '
+        -
+            name: item_weight
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+        -
+            name: item_status
+            attributes: ' INT(1) NOT NULL DEFAULT ''0'' '
+        -
+            name: item_datecreated
+            attributes: ' INT(11) NOT NULL DEFAULT ''0'' '
+        -
+            name: item_submitter
+            attributes: ' INT(10) NOT NULL DEFAULT ''0'' '
+    keys:
+        PRIMARY:
+            columns: item_id
+            unique: true

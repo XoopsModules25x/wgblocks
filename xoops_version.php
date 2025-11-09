@@ -18,8 +18,6 @@ declare(strict_types=1);
  * @copyright    2021 XOOPS Project (https://xoops.org)
  * @license      GPL 2.0 or later
  * @package      wgblocks
- * @since        1.0
- * @min_xoops    2.5.11 Beta1
  * @author       Goffy - Wedega.com - Email:webmaster@wedega.com - Website:https://xoops.wedega.com
  */
 
@@ -29,10 +27,10 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 // ------------------- Informations ------------------- //
 $modversion = [
     'name'                => \_MI_WGBLOCKS_NAME,
-    'version'             => '1.1.0',
-    'release'             => '07/06/2025',
-    'release_date'        => '2025/06/07', //yyyy/mm/dd
-    'module_status'       => 'Stable',
+    'version'             => '1.2.0',
+    'release'             => '09/11/2025',
+    'release_date'        => '2025/11/09', //yyyy/mm/dd
+    'module_status'       => 'Beta',
     'description'         => \_MI_WGBLOCKS_DESC,
     'author'              => 'Goffy - Wedega.com',
     'author_mail'         => 'webmaster@wedega.com',
@@ -46,8 +44,8 @@ $modversion = [
     'release_file'        => \XOOPS_URL . '/modules/wgblocks/docs/release_info file',
     'manual'              => 'link to manual file',
     'manual_file'         => \XOOPS_URL . '/modules/wgblocks/docs/install.txt',
-    'min_php'             => '7.4',
-    'min_xoops'           => '2.5.11 Stable',
+    'min_php'             => '8.4',
+    'min_xoops'           => '2.5.12 Beta8',
     'min_admin'           => '1.2',
     'min_db'              => ['mysql' => '5.6', 'mysqli' => '5.6'],
     'image'               => 'assets/images/logoModule.png',

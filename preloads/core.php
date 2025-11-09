@@ -23,9 +23,8 @@ class WgblocksCorePreload extends \XoopsPreloadItem
 {
     // to add PSR-4 autoloader
     /**
-     * @param $args
      */
-    public static function eventCoreIncludeCommonEnd($args)
+    public static function eventCoreIncludeCommonEnd()
     {
         require __DIR__ . '/autoloader.php';
     }
