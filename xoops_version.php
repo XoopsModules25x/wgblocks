@@ -47,7 +47,7 @@ $modversion = [
     'min_php'             => '8.4',
     'min_xoops'           => '2.5.12 Beta8',
     'min_admin'           => '1.2',
-    'min_db'              => ['mysql' => '5.6', 'mysqli' => '5.6'],
+    'min_db'              => ['mysql' => '5.7.8'],
     'image'               => 'assets/images/logoModule.png',
     'dirname'             => \basename(__DIR__),
     'dirmoduleadmin'      => 'Frameworks/moduleclasses/moduleadmin',
