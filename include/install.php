@@ -15,8 +15,6 @@
  * @copyright      module for xoops
  * @license        GPL 2.0 or later
  * @package        Wgblocks
- * @since          1.0
- * @min_xoops      2.5.11
  * @author         Wedega - Email:<webmaster@wedega.com> - Website:<https://wedega.com> XOOPS Project (www.xoops.org) $
  */
 
@@ -50,10 +48,9 @@ function xoops_module_pre_install_wgblocks(\XoopsModule $module)
 }
 
 /**
- * @param \XoopsModule $module
  * @return bool
  */
-function xoops_module_install_wgblocks(\XoopsModule $module)
+function xoops_module_install_wgblocks()
 {
     require \dirname(__DIR__) . '/preloads/autoloader.php';
 

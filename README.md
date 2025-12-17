@@ -19,15 +19,12 @@ If you like the wgBlocks module and thanks to the long process for giving the op
 [![Latest Version](https://img.shields.io/github/release/XoopsModules25x/wgblocks.svg?style=flat)](https://github.com/XoopsModules25x/wgsitenotice/releases/latest)
 
 # Require:
-- XOOPS 2.5.11;
+- XOOPS 2.5.12;
 - XOOPS Admin 1.2;
-- PHP 7.4 or higher; this module is ready for PHP 8.4
-- MySQL 5.5; -> Minimum Recommended Using InnoDB Version 5.1 or Later
+- PHP 8.4 or higher
+- MySQL 5.7.8 or higher, 8.4.5+ recommended
 
 
-# Info
-
-**wgBlocks is ready for PHP 8.4**
 
 #### Tutorial:
 No additional tutorial necessary. See module help.

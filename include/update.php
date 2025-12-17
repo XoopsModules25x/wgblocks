@@ -15,8 +15,6 @@
  * @param mixed      $module
  * @param null|mixed $prev_version
  * @package        Wgblocks
- * @since          1.0
- * @min_xoops      2.5.11
  * @author         Wedega - Email:<webmaster@wedega.com> - Website:<https://wedega.com>
  * @version        $Id: 1.0 update.php 1 Mon 2018-03-19 10:04:53Z XOOPS Project (www.xoops.org) $
  * @copyright      module for xoops
@@ -31,17 +29,16 @@ use XoopsModules\Wgblocks\Common\ {
 
 /**
  * @param      $module
- * @param null $prev_version
  *
  * @return bool|null
  */
-function xoops_module_update_wgblocks($module, $prev_version = null)
+function xoops_module_update_wgblocks($module)
 {
     $moduleDirName = $module->dirname();
 
     //check upload directory
 	require_once __DIR__ . '/install.php';
-    $ret = xoops_module_install_wgblocks($module);
+    $ret = xoops_module_install_wgblocks();
 
     // update DB corresponding to sql/mysql.sql
     $configurator = new Configurator();
@@ -90,6 +87,8 @@ function xoops_module_update_wgblocks($module, $prev_version = null)
  *
  * @return bool
  */
+
+/*
 function update_wgblocks_v10($module)
 {
     global $xoopsDB;
@@ -137,18 +136,21 @@ function update_wgblocks_v10($module)
 }
 
 // irmtfan bug fix: solve templates duplicate issue
+*/
 
 /**
  * @param $module
  *
  * @return bool
  */
+
+/*
 function wgblocks_check_db($module)
 {
     $ret = true;
 	//insert here code for database check
 
-    /*
+
     // Example: update table (add new field)
     $table   = $GLOBALS['xoopsDB']->prefix('wgblocks_images');
     $field   = 'img_exif';
@@ -182,6 +184,7 @@ function wgblocks_check_db($module)
             $ret = false;
         }
     }
-    */
+    /
     return $ret;
 }
+*/

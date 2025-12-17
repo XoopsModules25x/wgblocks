@@ -21,8 +21,6 @@ namespace XoopsModules\Wgblocks;
  * @copyright    2021 XOOPS Project (https://xoops.org)
  * @license      GPL 2.0 or later
  * @package      wgblocks
- * @since        1.0
- * @min_xoops    2.5.11 Beta1
  * @author       Goffy - Wedega.com - Email:webmaster@wedega.com - Website:https://xoops.wedega.com
  */
 
@@ -47,8 +45,6 @@ class Items extends \XoopsObject
 
     /**
      * Constructor
-     *
-     * @param null
      */
     public function __construct()
     {
@@ -66,8 +62,6 @@ class Items extends \XoopsObject
 
     /**
      * @static function &getInstance
-     *
-     * @param null
      */
     public static function getInstance()
     {
@@ -83,8 +77,7 @@ class Items extends \XoopsObject
      */
     public function getNewInsertedIdItems()
     {
-        $newInsertedId = $GLOBALS['xoopsDB']->getInsertId();
-        return $newInsertedId;
+        return $GLOBALS['xoopsDB']->getInsertId();
     }
 
     /**
@@ -98,9 +91,9 @@ class Items extends \XoopsObject
         if (!$action) {
             $action = $_SERVER['REQUEST_URI'];
         }
-        $isAdmin = \is_object($GLOBALS['xoopsUser']) ? $GLOBALS['xoopsUser']->isAdmin($GLOBALS['xoopsModule']->mid()) : false;
+        $isAdmin = \is_object($GLOBALS['xoopsUser']) && $GLOBALS['xoopsUser']->isAdmin($GLOBALS['xoopsModule']->mid());
         // Title
-        $title = $this->isNew() ? \sprintf(\_AM_WGBLOCKS_ITEM_ADD) : \sprintf(\_AM_WGBLOCKS_ITEM_EDIT);
+        $title = $this->isNew() ? \_AM_WGBLOCKS_ITEM_ADD : \_AM_WGBLOCKS_ITEM_EDIT;
         // Get Theme Form
         \xoops_load('XoopsFormLoader');
         $form = new \XoopsThemeForm($title, 'form', $action, 'post', true);
@@ -174,9 +167,11 @@ class Items extends \XoopsObject
      */
     public function getValuesItems($keys = null, $format = null, $maxDepth = null)
     {
-        $helper  = \XoopsModules\Wgblocks\Helper::getInstance();
-        $utility = new \XoopsModules\Wgblocks\Utility();
-        $ret = $this->getValues($keys, $format, $maxDepth);
+        $helper   = \XoopsModules\Wgblocks\Helper::getInstance();
+        $utility  = new \XoopsModules\Wgblocks\Utility();
+        $ret      = $this->getValues($keys, $format, $maxDepth);
+        $typeText = '';
+
         $ret['id']          = $this->getVar('item_id');
         $type               = $this->getVar('item_type');
         $ret['type']        = $type;

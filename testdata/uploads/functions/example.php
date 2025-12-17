@@ -15,20 +15,15 @@
  * @copyright      module for xoops
  * @license        GPL 2.0 or later
  * @package        Wgblocks
- * @since          1.0
- * @min_xoops      2.5.11
  * @author         Wedega - Email:<webmaster@wedega.com> - Website:<https://wedega.com> XOOPS Project (www.xoops.org) $
  */
 
 /**
- * @param null
- * @return bool
+ * @return string
  */
 function wgblocks_func_example()
 {
 
-    $returnText = 'This is my content of php example function';
-
-    return $returnText;
+    return 'This is my content of php example function';
 
 }

@@ -18,8 +18,6 @@ declare(strict_types=1);
  * @copyright    2021 XOOPS Project (https://xoops.org)
  * @license      GPL 2.0 or later
  * @package      wgblocks
- * @since        1.0
- * @min_xoops    2.5.11 Beta1
  * @author       Goffy - Wedega.com - Email:webmaster@wedega.com - Website:https://xoops.wedega.com
  */
 
@@ -91,17 +89,14 @@ function wgblocks_RewriteUrl($module, $array, $type = 'content')
 {
     $comment = '';
     $helper = \XoopsModules\Wgblocks\Helper::getInstance();
-    $itemsHandler = $helper->getHandler('items');
     $lenght_id = $helper->getConfig('lenght_id');
     $rewrite_url = $helper->getConfig('rewrite_url');
 
+    $id = $array['content_id'];
     if (0 != $lenght_id) {
-        $id = $array['content_id'];
         while (\strlen($id) < $lenght_id) {
             $id = '0' . $id;
         }
-    } else {
-        $id = $array['content_id'];
     }
 
     if (isset($array['topic_alias']) && $array['topic_alias']) {
@@ -119,7 +114,6 @@ function wgblocks_RewriteUrl($module, $array, $type = 'content')
             $rewrite_base = '/modules/';
             $page = 'page=' . $array['content_alias'];
             return \XOOPS_URL . $rewrite_base . $module . '/' . $type . '.php?' . $topic_name . 'id=' . $id . '&amp;' . $page . $comment;
-            break;
 
         case 'rewrite':
             if($topic_name) {
@@ -142,9 +136,8 @@ function wgblocks_RewriteUrl($module, $array, $type = 'content')
             }
 
             return \XOOPS_URL . $rewrite_base . $module_name . $type . $topic_name  . $id . $page . $rewrite_ext;
-            break;
 
-         case 'short':
+        case 'short':
             if($topic_name) {
                 $topic_name .= '/';
             }
@@ -164,7 +157,6 @@ function wgblocks_RewriteUrl($module, $array, $type = 'content')
             }
 
             return \XOOPS_URL . $rewrite_base . $module_name . $type . $topic_name . $page . $rewrite_ext;
-            break;
     }
     return null;
 }
@@ -179,7 +171,6 @@ function wgblocks_Filter($url, $type = '') {
 
     // Get regular expression from module setting. default setting is : `[^a-z0-9]`i
     $helper = \XoopsModules\Wgblocks\Helper::getInstance();
-    $itemsHandler = $helper->getHandler('items');
     $regular_expression = $helper->getConfig('regular_expression');
 
     $url = \strip_tags($url);
@@ -188,6 +179,5 @@ function wgblocks_Filter($url, $type = '') {
     $url .= \htmlentities($url, ENT_COMPAT, 'utf-8');
     $url .= \preg_replace('`&([a-z])(acute|uml|circ|grave|ring|cedil|slash|tilde|caron|lig);`i', "\1", $url);
     $url .= \preg_replace([$regular_expression, '`[-]+`'], '-', $url);
-    $url = ('' == $url) ? $type : \strtolower(\trim($url, '-'));
-    return $url;
+    return ('' == $url) ? $type : \strtolower(\trim($url, '-'));
 }
